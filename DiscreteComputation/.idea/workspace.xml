@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d3a3a97-ddce-4e25-8339-2fcdf2ce4e35" name="Changes" comment="" />
+    <list default="true" id="2d3a3a97-ddce-4e25-8339-2fcdf2ce4e35" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/MainScreenUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/MainScreenUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/img_7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyUiController.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyUiController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/MyUiController.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,10 +40,11 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "false",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "530",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "418",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/JuanJo/Desktop/IntegradoraDiscretas/discrete-data-structures-TI1-HelloKittyInc/DiscreteComputation/src/view",
+    "last_opened_file_path": "C:/Users/JuanJo/Desktop/IntegradoraDiscretas/discrete-data-structures-TI1-HelloKittyInc/DiscreteComputation",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -43,12 +55,26 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\JuanJo\Desktop\IntegradoraDiscretas\discrete-data-structures-TI1-HelloKittyInc\DiscreteComputation\src\view" />
       <recent name="C:\Users\JuanJo\Desktop\IntegradoraDiscretas\discrete-data-structures-TI1-HelloKittyInc\DiscreteComputation\src" />
+      <recent name="C:\Users\JuanJo\Desktop\IntegradoraDiscretas\discrete-data-structures-TI1-HelloKittyInc\DiscreteComputation\src\view" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\JuanJo\Desktop\IntegradoraDiscretas\discrete-data-structures-TI1-HelloKittyInc" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="DiscreteComputation" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -58,7 +84,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696337219959</updated>
-      <workItem from="1696337230835" duration="7510000" />
+      <workItem from="1696337230835" duration="11700000" />
+      <workItem from="1696352440337" duration="6471000" />
     </task>
     <servers />
   </component>
