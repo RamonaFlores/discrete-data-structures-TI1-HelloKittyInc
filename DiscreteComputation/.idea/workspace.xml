@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d3a3a97-ddce-4e25-8339-2fcdf2ce4e35" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/model/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/TaskCreationScreen.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/TaskCreationScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/MainScreenUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/MainScreenUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +42,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "configurable.group.language",
     "vue.rearranger.settings.migration": "true"
@@ -87,7 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696337219959</updated>
       <workItem from="1696337230835" duration="11700000" />
-      <workItem from="1696352440337" duration="15714000" />
+      <workItem from="1696352440337" duration="16799000" />
     </task>
     <servers />
   </component>
