@@ -46,8 +46,6 @@ public class HashTableChaining <K,V> implements IHash<K,V> {
         //this loop is used to traverse through the linked list.
 
         while (nodeList != null) {
-
-
             //a conditional statement that checks whether the key of the current node (nodeList)
             //in the linkedList is equal to the provided "key".
             //if they are equal it means that the key you're trying to insert already exists in the linked list
@@ -59,16 +57,15 @@ public class HashTableChaining <K,V> implements IHash<K,V> {
                 nodeList.setValue(value);
                 return;
             }
-
             // Checks whether the next node in the linked list
             // after the current node represented by "nodeList",
             // is "null".
             if  (nodeList.getNextNode() == null){
+                //is used to update the reference nodeList to point to the next node in the linked list.
+                nodeList = nodeList.getNextNode();
                 //the loop stops here because there are no more nodes to traverse.
                 break;
             }
-            //is used to update the reference nodeList to point to the next node in the linked list.
-                    nodeList = nodeList.getNextNode();
         }
 
         // Create a new node and add it to the end of the linked list
@@ -84,12 +81,38 @@ public class HashTableChaining <K,V> implements IHash<K,V> {
 
     @Override
     public V search(K key) {
-        int i = 0;
-        return null;
+        //V is a generic type parameter representing the type of values that the value variable can hold
+        // This means that the variable value can store a value of any type specified when the method is called
+        // such as Integer, String, or any other type depending on how the method is used.
+        //It also initializes the variable '
+        V value = null;
+        //the variable "insertKey" holds the value of the method hashFunction(key)
+        //which computes the hash code of the given key.
+        int searchKey = hashFunction(key);
+        //This variable holds a
+        HNode<K,V> searchNode = table[searchKey];
+        while (searchNode != null) {
+            if(searchNode.getKey().equals(key)){
+                value = searchNode.getValue();
+            }
+            searchNode = searchNode.getNextNode();
+        }
+        return value;
     }
 
     @Override
     public void delete(K key) {
+        int deleteKey = hashFunction(key);
+        HNode<K,V> deleteNode = table[deleteKey];
+        while (deleteNode != null){
+            if(deleteNode.getKey().equals(key)){
+                HNode<K,V> prev = deleteNode.getPreviousNode();
+                HNode<K,V> next = deleteNode.getNextNode();
+                prev.setNextNode(next);
+                next.setPreviousNode(prev);
+            }
+            deleteNode = deleteNode.getNextNode();
+        }
     }
 }
 
