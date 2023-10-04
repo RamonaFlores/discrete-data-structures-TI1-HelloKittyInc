@@ -1,5 +1,7 @@
 package ui;
 
+import model.MyController;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,7 +17,12 @@ public class MainScreenUI extends JFrame {
     private JComboBox comboBox1;
     private JLabel message;
 
-    public MainScreenUI(){
+    private MyController controller;
+    private TaskCreationScreen taskCreationScreen;
+
+    public MainScreenUI(MyController controller){
+        this.controller=controller;
+        this.taskCreationScreen=new TaskCreationScreen(controller);
         setContentPane(MainPanel);
         setTitle("Remind");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -28,12 +35,16 @@ public class MainScreenUI extends JFrame {
                 int option=comboBox1.getSelectedIndex();
                 switch(option){
                     case 0:
+                        JOptionPane.showMessageDialog(null,"boff");
+                        taskCreationScreen.setVisible(true);
+                        break;
                 }
             }
         });
     }
     public static void main(String[] args){
-        new MainScreenUI();
+
+        new MainScreenUI(new MyController());
     }
 
 }
