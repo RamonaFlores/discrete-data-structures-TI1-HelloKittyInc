@@ -17,7 +17,7 @@ public class MyController implements Cloneable {
         Task taskToHash=new Task(title,description,deadline,isReminder,priority);
         hashTableChaining.insert(taskToHash.getIdentifier(),taskToHash);
         ImageIcon ImageIcon;
-        JOptionPane.showConfirmDialog(null,"Task:  "+taskToHash.getTitle()+"with key "+ taskToHash.getIdentifier()+" was added ","Confirmation",JOptionPane.OK_OPTION,JOptionPane.OK_OPTION,ImageIcon =new ImageIcon("src/view/img_7.png"));
+        JOptionPane.showConfirmDialog(null,"Task:  "+taskToHash.getTitle()+"with key "+ taskToHash.getIdentifier()+" was added ","Confirmation",JOptionPane.OK_OPTION,JOptionPane.OK_OPTION,ImageIcon =new ImageIcon("DiscreteComputation/src/view/img_7.png"));
     }
     public void modifyTask(int key,int attribute,String value){
 
@@ -42,8 +42,20 @@ public class MyController implements Cloneable {
                    taskToModify.setDeadline(value);
                    break;
            }
-       JOptionPane.showMessageDialog(null, "El atributo con valor: " + oldvalue + " ahora es :" + value);
+       JOptionPane.showMessageDialog(null, "The attribute with value : " + oldvalue + " is now :" + value);
        }
+
+    }
+    public void deleteTask(int key){
+        Task taskToDelete=hashTableChaining.search(key);
+        if(taskToDelete==null){
+            JOptionPane.showMessageDialog(null,"Couldn't find the task associated to that ID");
+        }
+        else{
+            hashTableChaining.delete(key);
+            JOptionPane.showConfirmDialog(null,"Task was deleted successfully.");
+        }
+
 
     }
 

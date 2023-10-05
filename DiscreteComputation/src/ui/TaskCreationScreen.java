@@ -20,6 +20,7 @@ public class TaskCreationScreen extends JFrame {
     private JLabel priorityLabel;
     private JButton ConfirmButton;
     private JButton cancelButton;
+    private JLabel bear;
     MyController controller;
 
     public TaskCreationScreen(MyController controller){
@@ -51,6 +52,9 @@ public class TaskCreationScreen extends JFrame {
                 int priority=priorityBox1.getSelectedIndex();
                 controller.addTask(taskTitle,taskDescription,deadline,isTaskbool,priority);
                 setVisible(false);
+                textField1.setText("");
+                textArea1.setText("");
+                priorityNDeadline2.setText("");
             }
         });
     }
