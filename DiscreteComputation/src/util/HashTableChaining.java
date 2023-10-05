@@ -105,17 +105,32 @@ public class HashTableChaining <K,V> implements IHash<K,V> {
     @Override
     public void delete(K key) {
         int deleteKey = hashFunction(key);
-        HNode<K,V> deleteNode = table[deleteKey];
-        while (deleteNode != null){
-            if(deleteNode.getKey().equals(key)){
-                HNode<K,V> prev = deleteNode.getPreviousNode();
-                HNode<K,V> next = deleteNode.getNextNode();
-                prev.setNextNode(next);
-                next.setPreviousNode(prev);
+        HNode<K, V> deleteNode = table[deleteKey];
+        // Si no hay nodos en esta posición de la tabla, no hay nada que eliminar
+        if (deleteNode == null) {
+            return;
+        }
+        // Caso especial: si el primer nodo en la posición coincide con la clave
+        if (deleteNode.getKey().equals(key)) {
+            table[deleteKey] = deleteNode.getNextNode();
+            return;
+        }
+        while (deleteNode != null) {
+            if (deleteNode.getKey().equals(key)) {
+                HNode<K, V> prev = deleteNode.getPreviousNode();
+                HNode<K, V> next = deleteNode.getNextNode();
+                if (prev != null) {
+                    prev.setNextNode(next);
+                }
+                if (next != null) {
+                    next.setPreviousNode(prev);
+                }
+                return; // Nodo encontrado y eliminado, sal del bucle
             }
             deleteNode = deleteNode.getNextNode();
         }
     }
+
 
     @Override
     public String toString() {

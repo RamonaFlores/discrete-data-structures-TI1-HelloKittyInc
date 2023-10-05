@@ -43,9 +43,12 @@ public class MainScreenUI extends JFrame {
                         break;
                     case 1:
                         JOptionPane.showMessageDialog(null,"raul mamabi");
-                     modifyScreen.setVisible(true);
+                        modifyScreen.setVisible(true);
+                        break;
+                    case 2:
 
                 }
+
             }
         });
     }

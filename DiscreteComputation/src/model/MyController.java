@@ -46,14 +46,15 @@ public class MyController implements Cloneable {
        }
 
     }
-    public void deleteTask(int key){
+    public boolean deleteTask(int key){
         Task taskToDelete=hashTableChaining.search(key);
         if(taskToDelete==null){
             JOptionPane.showMessageDialog(null,"Couldn't find the task associated to that ID");
+            return false;
         }
         else{
             hashTableChaining.delete(key);
-            JOptionPane.showConfirmDialog(null,"Task was deleted successfully.");
+            return true;
         }
 
 
@@ -74,6 +75,7 @@ public class MyController implements Cloneable {
         HashTableChaining<Integer,Task> hashTableChaining1=new HashTableChaining<>();
         hashTableChaining1.insert(newTask.getIdentifier(),newTask);
        Task found = hashTableChaining1.search(newTask.getIdentifier());
+       hashTableChaining1.delete(found.getIdentifier());
 
        System.out.println(hashTableChaining1.toString());
 
