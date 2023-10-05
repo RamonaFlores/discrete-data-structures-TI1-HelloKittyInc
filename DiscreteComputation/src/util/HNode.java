@@ -43,5 +43,12 @@ public class HNode<K,V> implements INode {
     public void setPreviousNode(HNode<K, V> previous) {
         this.previousNode = previous;
     }
+
+    @Override
+    public String toString() {
+        return
+                "value=" + value
+                ;
+    }
 }
 

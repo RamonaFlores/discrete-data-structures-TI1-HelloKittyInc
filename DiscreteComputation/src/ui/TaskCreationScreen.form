@@ -56,7 +56,9 @@
             <preferred-size width="150" height="50"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value=""/>
+        </properties>
       </component>
       <component id="b2207" class="javax.swing.JRadioButton" binding="taskRadioButton" default-binding="true">
         <constraints>

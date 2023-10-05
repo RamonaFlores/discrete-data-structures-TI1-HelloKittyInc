@@ -1,5 +1,7 @@
 package util;
 
+import java.util.Arrays;
+
 public class HashTableChaining <K,V> implements IHash<K,V> {
 
     private HNode<K,V>[] table;
@@ -75,7 +77,7 @@ public class HashTableChaining <K,V> implements IHash<K,V> {
         nodeList.setNextNode(finalNode);
     }
     public int hashFunction(K key){
-        int index = key.hashCode()%slotNumber;
+        int index = Math.abs(key.hashCode()%slotNumber);
         return index;
     }
 
@@ -113,6 +115,14 @@ public class HashTableChaining <K,V> implements IHash<K,V> {
             }
             deleteNode = deleteNode.getNextNode();
         }
+    }
+
+    @Override
+    public String toString() {
+        return "HashTableChaining{" +
+                "table=" + Arrays.toString(table) +
+                ", slotNumber=" + slotNumber +
+                '}';
     }
 }
 

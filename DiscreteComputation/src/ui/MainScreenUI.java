@@ -19,10 +19,13 @@ public class MainScreenUI extends JFrame {
 
     private MyController controller;
     private TaskCreationScreen taskCreationScreen;
+    private ModifyScreen modifyScreen;
+
 
     public MainScreenUI(MyController controller){
         this.controller=controller;
         this.taskCreationScreen=new TaskCreationScreen(controller);
+        this.modifyScreen=new ModifyScreen(controller);
         setContentPane(MainPanel);
         setTitle("Remind");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -38,6 +41,10 @@ public class MainScreenUI extends JFrame {
                         JOptionPane.showMessageDialog(null,"boff");
                         taskCreationScreen.setVisible(true);
                         break;
+                    case 1:
+                        JOptionPane.showMessageDialog(null,"raul mamabi");
+                     modifyScreen.setVisible(true);
+
                 }
             }
         });

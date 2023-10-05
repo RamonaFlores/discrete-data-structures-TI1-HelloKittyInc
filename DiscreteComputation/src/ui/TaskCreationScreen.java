@@ -42,7 +42,7 @@ public class TaskCreationScreen extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 boolean isTaskbool;
                 String taskTitle= textField1.getText();
-                String taskDescription=textField1.getText();
+                String taskDescription=textArea1.getText();
                 String deadline=priorityNDeadline2.getText();
                 String isTask= reminderRadioButton.getActionCommand();
                 if(isTask.equals("task")){
