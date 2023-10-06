@@ -11,7 +11,6 @@ public class HashTableChaining <K,V> implements IHash<K,V> {
     public HashTableChaining(){
         slotNumber=10;
         table=new HNode[slotNumber];
-
     }
     public HashTableChaining(int slotNumber){
         this.slotNumber=slotNumber;
@@ -101,7 +100,6 @@ public class HashTableChaining <K,V> implements IHash<K,V> {
         }
         return value;
     }
-
     @Override
     public void delete(K key) {
         int deleteKey = hashFunction(key);
@@ -130,8 +128,6 @@ public class HashTableChaining <K,V> implements IHash<K,V> {
             deleteNode = deleteNode.getNextNode();
         }
     }
-
-
     @Override
     public String toString() {
         return "HashTableChaining{" +
