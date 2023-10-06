@@ -2,22 +2,21 @@ package model;
 
 import java.util.Calendar;
 
-public class Task {
+public class Task implements Comparable<Task> {
 
     private String title;
     private String description;
     private String deadline;
     private Boolean isReminder;
-    static private int identifier;
-
     private int priority;
-    public Task(String title, String description, String   deadline, Boolean isReminder,int priority){
+    static private int identifier;
+    public Task(String title, String description, String   deadline, Boolean isReminder, int priority){
         this.title=title;
         this.description=description;
         this.deadline=deadline;
         this.isReminder=isReminder;
         this.priority=priority;
-        this.identifier=title.hashCode();
+        this.identifier++;
 
     }
     public int generateIdentifier(){
@@ -79,5 +78,15 @@ public class Task {
                 ", isReminder=" + isReminder +
                 ", priority=" + priority +
                 '}';
+    }
+    @Override
+    public int compareTo(Task o) {
+        if(this.priority < o.getPriority()){
+            return -1;
+        } else if (this.priority > o.getPriority()){
+            return 1;
+        } else {
+            return 0;
+        }
     }
 }

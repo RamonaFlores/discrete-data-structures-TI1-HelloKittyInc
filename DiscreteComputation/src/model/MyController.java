@@ -1,6 +1,7 @@
 package model;
 
 import util.HashTableChaining;
+import util.MaxHeap;
 
 import javax.swing.*;
 import java.util.Stack;
@@ -8,14 +9,16 @@ import java.util.Stack;
 public class MyController implements Cloneable {
     private HashTableChaining<Integer,Task> hashTableChaining;
     private Stack<MyController> versionController;
+    private MaxHeap<Task> maxHeap;
     public MyController() {
-        this.hashTableChaining=new HashTableChaining<Integer,Task>();
-        this.versionController = new Stack<>();
-
+        hashTableChaining=new HashTableChaining<Integer,Task>();
+        versionController = new Stack<>();
+        maxHeap = new MaxHeap<>(10);
     }
     public void addTask(String title,String description,String deadline,boolean isReminder,int priority){
         Task taskToHash=new Task(title,description,deadline,isReminder,priority);
         hashTableChaining.insert(taskToHash.getIdentifier(),taskToHash);
+
         ImageIcon ImageIcon;
         JOptionPane.showConfirmDialog(null,"Task:  "+taskToHash.getTitle()+"with key "+ taskToHash.getIdentifier()+" was added ","Confirmation",JOptionPane.OK_OPTION,JOptionPane.OK_OPTION,ImageIcon =new ImageIcon("DiscreteComputation/src/view/img_7.png"));
     }
@@ -69,13 +72,19 @@ public class MyController implements Cloneable {
     public void restoreState() {
 
     }
+
+
+    public void addTaskPriority(){
+
+
+    }
     public static void main(String[] args){
         MyController controller=new MyController();
         Task newTask=new Task("a","b","b",true,4);
         HashTableChaining<Integer,Task> hashTableChaining1=new HashTableChaining<>();
         hashTableChaining1.insert(newTask.getIdentifier(),newTask);
-       Task found = hashTableChaining1.search(newTask.getIdentifier());
-       hashTableChaining1.delete(found.getIdentifier());
+        Task found = hashTableChaining1.search(newTask.getIdentifier());
+        hashTableChaining1.delete(found.getIdentifier());
 
        System.out.println(hashTableChaining1.toString());
 
