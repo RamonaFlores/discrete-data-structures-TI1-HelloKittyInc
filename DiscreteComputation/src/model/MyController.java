@@ -57,6 +57,7 @@ public class MyController implements Cloneable {
         }
         else{
             hashTableChaining.delete(key);
+            JOptionPane.showMessageDialog(null,"Task: "+ taskToDelete.getTitle()+" was deleted successfully");
             return true;
         }
 

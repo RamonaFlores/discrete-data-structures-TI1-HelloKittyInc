@@ -24,8 +24,8 @@ public class NodePQ <T> {
     @Override
     public String toString() {
         return "NodePQ{" +
-                "value=" + value +
-                ", priorityValue=" + priorityValue +
-                '}';
+                "priorityValue: " + priorityValue + "\n"+
+                "value: " + value +
+                "\n";
     }
 }

@@ -20,12 +20,14 @@ public class MainScreenUI extends JFrame {
     private MyController controller;
     private TaskCreationScreen taskCreationScreen;
     private ModifyScreen modifyScreen;
+    private DeleteScreen deleteScreen;
 
 
     public MainScreenUI(MyController controller){
         this.controller=controller;
         this.taskCreationScreen=new TaskCreationScreen(controller);
         this.modifyScreen=new ModifyScreen(controller);
+        this.deleteScreen=new DeleteScreen(controller);
         setContentPane(MainPanel);
         setTitle("Remind");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -46,6 +48,8 @@ public class MainScreenUI extends JFrame {
                         modifyScreen.setVisible(true);
                         break;
                     case 2:
+                        JOptionPane.showMessageDialog(null,"gofri cachon");
+                        deleteScreen.setVisible(true);
 
                 }
 

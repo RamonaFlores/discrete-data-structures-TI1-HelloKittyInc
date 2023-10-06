@@ -34,8 +34,7 @@ public class MaxHeap <V> implements MaxPriorityQueueI<V> {
         if (rightChild < heapSize && maxHeap[rightChild].getPriorityValue() > maxHeap[largest].getPriorityValue()) {
             largest = rightChild;
         }
-
-
+        
         // Si el nodo más grande no es el nodo actual, intercambiar y recursivamente llamar a maxHeapify
         if (largest != i) {
             swap(i, largest);
