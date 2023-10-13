@@ -50,6 +50,7 @@ public class MainScreenUI extends JFrame {
                     case 2:
                         JOptionPane.showMessageDialog(null,"gofri cachon");
                         deleteScreen.setVisible(true);
+                        break;
 
                 }
 

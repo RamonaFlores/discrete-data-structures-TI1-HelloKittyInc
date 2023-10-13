@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Calendar;
-
 public class Task implements Comparable<Task> {
 
     private String title;
@@ -18,6 +16,15 @@ public class Task implements Comparable<Task> {
         this.priority=priority;
         this.identifier++;
 
+    }
+
+    public void TaskCons(Task task){
+        this.title = task.getTitle();
+        this.description = task.getDescription();
+        this.deadline = task.getDeadline();
+        this.isReminder = task.getReminder();
+        this.priority = task.getPriority();
+        this.identifier = task.getIdentifier();
     }
     public int generateIdentifier(){
         return title.hashCode();

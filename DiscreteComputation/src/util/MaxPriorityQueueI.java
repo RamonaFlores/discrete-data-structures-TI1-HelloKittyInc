@@ -3,7 +3,7 @@ package util;
 public interface MaxPriorityQueueI<V> {
     public void insert(int key, V element);
 
-    public V maximun();
+    public V maximum();
 
     public V extractMax();
 
