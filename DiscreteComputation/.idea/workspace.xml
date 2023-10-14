@@ -5,27 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d3a3a97-ddce-4e25-8339-2fcdf2ce4e35" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ui/ModifyScreen.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ui/ModifyScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/img_6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/img_8.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiscreteComputation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DiscreteComputation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DiscreteComputation/model/MyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DiscreteComputation/model/MyController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DiscreteComputation/model/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DiscreteComputation/model/Task.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DiscreteComputation/ui/MainScreenUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DiscreteComputation/ui/MainScreenUI$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DiscreteComputation/ui/MainScreenUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DiscreteComputation/ui/MainScreenUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DiscreteComputation/ui/TaskCreationScreen$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DiscreteComputation/ui/TaskCreationScreen$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DiscreteComputation/ui/TaskCreationScreen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DiscreteComputation/ui/TaskCreationScreen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DiscreteComputation/util/HNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DiscreteComputation/util/HNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DiscreteComputation/util/HashTableChaining.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DiscreteComputation/util/HashTableChaining.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DiscreteComputation/util/IHash.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DiscreteComputation/util/IHash.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/MainScreenUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/MainScreenUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/TaskCreationScreen.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/TaskCreationScreen.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/TaskCreationScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/TaskCreationScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/HNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/HNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/HashTableChaining.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/HashTableChaining.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +38,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -100,7 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1696337219959</updated>
       <workItem from="1696337230835" duration="11700000" />
-      <workItem from="1696352440337" duration="27869000" />
+      <workItem from="1696352440337" duration="34539000" />
     </task>
     <servers />
   </component>

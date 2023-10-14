@@ -71,8 +71,11 @@ public class MyController{
         else{
             hashTableChaining.delete(key);
             JOptionPane.showMessageDialog(null,"Task: "+ taskToDelete.getTitle()+" was deleted successfully");
+            ver.push(new UserAct(ActionType.DELETETASK,taskToDelete));
             return true;
+
         }
+
     }
     public void undone(){
         UserAct action = ver.pop();
