@@ -91,31 +91,42 @@ public class MaxHeap<T> implements MaxPriorityQueueI<T> {
         maxHeapify(0);
         return max;
     }
+    /**
+     * Increases the key of a specific element in the priority queue. This method is used
+     * to update the priority of an element while maintaining the max-heap property.
+     *
+     * @param key The new priority value for the element.
+     * @param element The element for which the priority is to be updated.
+     * @throws IllegalArgumentException if the new key is smaller than the current key.
+     */
     @Override
     public void increaseKey(int key, T element) {
         int index = -1;
+        // Find the index of the element in the priority queue
         for (int i = 0; i < PQ.size(); i++) {
             if (PQ.get(i).getValue() == element) {
                 index = i;
             }
         }
+        // Check if the new key is smaller than the current key, which is not allowed in a max-heap
         if (key < PQ.get(index).getPriorityValue()) {
             throw new IllegalArgumentException("New key is smaller than the current key");
         }
+        // Update the priority value of the element
         PQ.get(index).setPriorityValue(key);
 
-        while (index > 1 && PQ.get(parent(index)).getPriorityValue() < PQ.get(index).getPriorityValue()){
+        // Maintain the max-heap property by repeatedly comparing the element with its parent
+        while (index > 1 && PQ.get(parent(index)).getPriorityValue() < PQ.get(index).getPriorityValue()) {
+            // Exchange the key values of the element and its parent
             int temp = PQ.get(index).getPriorityValue();
             PQ.get(index).setPriorityValue(PQ.get(parent(index)).getPriorityValue());
             PQ.get(parent(index)).setPriorityValue(temp);
             index = parent(index);
         }
     }
-
     public int parent(int i) {
         return i / 2;
     }
-
     /**
      * Returns a string representation of the elements in the Max Priority Queue.
      *

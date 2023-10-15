@@ -1,85 +1,86 @@
 package util;
 
+import model.Task;
+
 import java.util.Arrays;
+/**
+ * The HashTableChaining class represents a generic hash table that uses chaining for collision resolution.
+ * It allows you to insert, search, and delete key-value pairs and provides a string representation.
+ *
+ * @param <K> The type of keys.
+ * @param <V> The type of values associated with keys.
+ */
 
 public class HashTableChaining <K,V> implements IHash<K,V> {
-
     private HNode<K,V>[] table;
     private int slotNumber;
-
-
+    /**
+     * Constructs a hash table with a default number of slots.
+     */
     public HashTableChaining(){
-        slotNumber=10;
+        slotNumber=15;
         table=new HNode[slotNumber];
     }
+    /**
+     * Constructs a hash table with a specified number of slots.
+     *
+     * @param slotNumber The number of slots or buckets in the table.
+     */
     public HashTableChaining(int slotNumber){
         this.slotNumber=slotNumber;
         table=new HNode[slotNumber];
     }
+
+    /**
+     * Inserts a key-value pair into the hash table using separate chaining for collision resolution.
+     *
+     * @param key   The key to be inserted.
+     * @param value The value associated with the key.
+     */
     @Override
     public void insert(K key, V value) {
-        //the variable "insertKey" holds the value of the method hashFunction(key)
-        //which computes the hash code of the given key.
         int insertKey = hashFunction(key);
-        //'table' is an array-like structure used as the underlying storage for the HashTable
-        //each index in the array corresponds to a possible slot(Hash code)
-
-        //"table[insertKey]" is an expressioon that retrieves at the index specified by 'insertKey'
-        //in the 'table' array . This element is expected to be:
-
-        // a reference to the head of the linked list in the  slot
-        // or null if the slot is empty (meaning the LL has not been created yet).
         HNode<K, V> nodeList = table[insertKey];
-        //this conditional statement basically checks if "nodeList" is equal to null
-        //Remember that in java "null" represents the absence of an object or simply
-        // a reference to no object, in other words it does not reference any object within the program's memory.
-        if (nodeList == null) {
-            //this line of code is responsible for inserting a new key-value pair into the linked list associated with
-            // the hash code insertKey in the hash table
-            // If there is no existing-linked list at that index (table[insertKey] is null)
-            // it creates a new linked list with a single node containing the provided key and value.
-            // If a linked list already exists at that index, it adds the new node to the end of the existing list
-            // thus handling collision resolution using separate chaining.
-            table[insertKey] = new HNode<>(key, value);
-            return; // Exit the method if the list is empty
-        }
-        //Sets up a loop that continues executing as long as the "nodeList" variable is not null.
-        //this loop is used to traverse through the linked list.
 
+        if (nodeList == null) {
+            // Si no existe una lista enlazada en este índice, crea una nueva con el nodo finalNode
+            table[insertKey] = new HNode<>(key, value);
+            return;
+        }
         while (nodeList != null) {
-            //a conditional statement that checks whether the key of the current node (nodeList)
-            //in the linkedList is equal to the provided "key".
-            //if they are equal it means that the key you're trying to insert already exists in the linked list
-            //it helps identify whether a key already exists in the structure
-            // allowing duplicate handling or existing values updating
             if (nodeList.getKey().equals(key)) {
-                //this line is used to update the value of the value associated with the current node
-                //this line is tipically used to handle cases where you have a duplicated key
+                // Si la clave ya existe, actualiza el valor
                 nodeList.setValue(value);
                 return;
             }
-            // Checks whether the next node in the linked list
-            // after the current node represented by "nodeList",
-            // is "null".
-            if  (nodeList.getNextNode() == null){
-                //is used to update the reference nodeList to point to the next node in the linked list.
-                nodeList = nodeList.getNextNode();
-                //the loop stops here because there are no more nodes to traverse.
+
+            if (nodeList.getNextNode() == null) {
+                // Llegaste al final de la lista enlazada, detén el bucle
                 break;
             }
-        }
 
-        // Create a new node and add it to the end of the linked list
+            nodeList = nodeList.getNextNode();
+        }
+        // Crea un nuevo nodo y agrégalo al final de la lista enlazada
         HNode<K, V> finalNode = new HNode<>(key, value);
-        //You update the next reference of the current node to point to the new node,
-        // effectively inserting it into the list at the desired position.
         nodeList.setNextNode(finalNode);
     }
+    /**
+     * Computes the hash code for a given key and maps it to a slot in the hash table.
+     *
+     * @param key The key for which the hash code is computed.
+     * @return The index of the slot where the key should be stored.
+     */
     public int hashFunction(K key){
         int index = Math.abs(key.hashCode()%slotNumber);
         return index;
     }
-
+    /**
+     * Searches for a value associated with a given key in the hash table and return the last stacked node.
+     *
+     * @param key The key to search for.
+     * @return The value associated with the key, or null if the key is not found.
+     */
     @Override
     public V search(K key) {
         //V is a generic type parameter representing the type of values that the value variable can hold
@@ -100,6 +101,27 @@ public class HashTableChaining <K,V> implements IHash<K,V> {
         }
         return value;
     }
+
+    public HNode searchNode(K key) {
+        int searchKey = hashFunction(key);
+        HNode<K, V> searchNode = table[searchKey];
+
+        while (searchNode != null) {
+            if (searchNode.getKey().equals(key)) {
+                // Si encuentra la clave, devuelve el nodo
+                return searchNode;
+            }
+            searchNode = searchNode.getNextNode();
+        }
+        // Si la clave no se encontró en la lista enlazada, devuelve null
+        return null;
+    }
+
+    /**
+     * Deletes a key-value pair from the hash table.
+     *
+     * @param key The key to be deleted.
+     */
     @Override
     public void delete(K key) {
         int deleteKey = hashFunction(key);
@@ -128,12 +150,29 @@ public class HashTableChaining <K,V> implements IHash<K,V> {
             deleteNode = deleteNode.getNextNode();
         }
     }
+    /**
+     * Returns a string representation of the hash table.
+     *
+     * @return A string containing the table and slot information.
+     */
     @Override
     public String toString() {
-        return "HashTableChaining{" +
-                "table=" + Arrays.toString(table) +
-                ", slotNumber=" + slotNumber +
-                '}';
+        return "HashTableChaining " +
+                "Table: " + Arrays.toString(table) +
+                "SlotNumber: " + slotNumber;
+    }
+    public String printNodes() {
+        String message = "";
+
+        for (int i = 0; i < table.length; i++) {
+            if(table[i] != null) {
+                message += table[i].toString() + "\n";
+                if (table[i].getNextNode() != null) {
+                    message += table[i].getNextNode().toString() + "\n";
+                }
+            }
+        }
+        return message;
     }
 }
 

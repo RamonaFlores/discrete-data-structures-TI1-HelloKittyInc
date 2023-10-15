@@ -36,7 +36,9 @@ public class MyController{
         String oldvalue="";
         Task CopyTask = null;
         CopyTask.TaskCons(hashTableChaining.search(key));
-       Task taskToModify = hashTableChaining.search(key);
+        ver.push(new UserAct(ActionType.MODIFYTASK, CopyTask));
+
+        Task taskToModify = hashTableChaining.search(key);
 
        if (taskToModify==null){
            JOptionPane.showMessageDialog(null,"Couldn't find the task associated to that ID");
@@ -73,9 +75,7 @@ public class MyController{
             JOptionPane.showMessageDialog(null,"Task: "+ taskToDelete.getTitle()+" was deleted successfully");
             ver.push(new UserAct(ActionType.DELETETASK,taskToDelete));
             return true;
-
         }
-
     }
     public void undone(){
         UserAct action = ver.pop();
@@ -87,6 +87,8 @@ public class MyController{
                 addTask(action.getTask().getTitle(), action.getTask().getDescription(), action.getTask().getDeadline(), action.getTask().getReminder(), action.getTask().getPriority());
                 break;
             case MODIFYTASK:
+                deleteTask(action.getTask().getIdentifier());
+                addTask(action.getTask().getTitle(), action.getTask().getDescription(), action.getTask().getDeadline(), action.getTask().getReminder(), action.getTask().getPriority());
         }
     }
     public static void main(String[] args){
