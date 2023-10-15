@@ -60,9 +60,8 @@
             <item value="Add a Task"/>
             <item value="Modify a Task"/>
             <item value="Delete a Task"/>
-            <item value="Check your Tasks"/>
-            <item value="Check your High Priority Queue"/>
-            <item value="Check your Low Priority Queue"/>
+            <item value="Check your High Priority Tasks"/>
+            <item value="Check your No Priority Tasks"/>
           </model>
         </properties>
       </component>

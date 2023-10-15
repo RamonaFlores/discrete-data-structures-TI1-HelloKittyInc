@@ -91,6 +91,16 @@ public class MyController{
                 addTask(action.getTask().getTitle(), action.getTask().getDescription(), action.getTask().getDeadline(), action.getTask().getReminder(), action.getTask().getPriority());
         }
     }
+    public String showPriorityTasks(){
+       String msg="";
+       msg+=priorityTasksQueue.printArray();
+       return msg;
+    }
+    public String showNoPriorityTasks(){
+        String msg="";
+        msg+=noPriority.toString();
+        return msg;
+    }
     public static void main(String[] args){
         MyController controller=new MyController();
         Task newTask=new Task("a","b","b",true,4);
@@ -100,4 +110,5 @@ public class MyController{
         hashTableChaining1.delete(found.getIdentifier());
         System.out.println(hashTableChaining1.toString());
     }
+
 }

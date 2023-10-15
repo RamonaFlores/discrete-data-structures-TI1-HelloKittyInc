@@ -40,20 +40,36 @@ public class MainScreenUI extends JFrame {
                 int option=comboBox1.getSelectedIndex();
                 switch(option){
                     case 0:
-                        JOptionPane.showMessageDialog(null,"boff");
                         taskCreationScreen.setVisible(true);
                         break;
                     case 1:
-                        JOptionPane.showMessageDialog(null,"raul mamabi");
                         modifyScreen.setVisible(true);
                         break;
                     case 2:
-                        JOptionPane.showMessageDialog(null,"gofri cachon");
                         deleteScreen.setVisible(true);
                         break;
-
+                    case 3:
+                      JOptionPane.showConfirmDialog(null,controller.showNoPriorityTasks());
+                      break;
+                    case 4:
+                        JOptionPane.showConfirmDialog(null,controller.showPriorityTasks());
+                        break;
                 }
 
+            }
+        });
+        UndoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controller.undone();
+                JOptionPane.showMessageDialog(null,"Last action was undone.");
+            }
+        });
+        ExitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null,"Bye byeeeeee ^^ <3");
+                System.exit(0);
             }
         });
     }
